@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dark-theme.css' %}">
+
+</head>
+<body>
+    <h1>Books List!</h1>
+    <a href="{% url 'book-list' %}">Ver Lista de Livros</a><br>
+    <a href="{% url 'add-book' %}">Adicionar/Excluir Livros</a>
+</body>
+</html>

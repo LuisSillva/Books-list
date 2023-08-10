@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dark-theme.css' %}">
+    <title>Minha Lista de Livros</title>
+</head>
+<body>
+    <header>
+        <h1>Books List</h1>
+    </header>
+    
+    <ul class="book-list">
+        {% for book in books %}
+            <li class="book-list-item">
+                <h2>{{ book.title }}</h2>
+                <p>Author: {{ book.author }}</p>
+                <p>Genre: {{ book.genre }}</p>
+                <a class="delete-button" href="{% url 'delete-book' book.id %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <div class="add-book-form">
+        <h2>Adicionar Livro</h2>
+        <form method="post" action="{% url 'add-book' %}">
+            {% csrf_token %}
+            <label for="title">Title: </label>
+            <input type="text" name="title">
+            <br>
+            <label for="author">Author:</label>
+            <input type="text" name="author">
+            <br>
+            <label for="genre">Genre:</label>
+            <input type="string" name="genre">
+            <br>
+            <button class="button" type="submit">Adicionar</button>
+        </form>
+        <a href="{% url 'home' %}" class="btn btn-primary">Voltar para a Home</a>
+    </div>
+
+
+</body>
+</html>

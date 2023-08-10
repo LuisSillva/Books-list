@@ -1,0 +1,55 @@
+/* Defina as cores de fundo e de texto */
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilo dos botões */
+.button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo da lista de livros */
+.book-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.book-list-item {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #292929;
+    border-radius: 5px;
+}
+
+/* Estilo do formulário de adicionar livro */
+.add-book-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Estilo do botão de exclusão */
+.delete-button {
+    background-color: #dc3545;
+}
+
+.home-button {
+    margin-top: 20px; /* Ajuste o valor conforme necessário */
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar/Excluir Livros</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dark-theme.css' %}">
+</head>
+<body>
+    <h1>Adicionar ou Excluir Livros</h1>
+    
+    <!-- Formulário para adicionar livro -->
+    <form method="post" action="{% url 'add-book' %}">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Título do Livro" required><br>
+        <input type="text" name="author" placeholder="Autor do Livro" required><br>
+        <input type="text" name="genre" placeholder="Gênero do Livro" required><br>
+        <button type="submit">Adicionar Livro</button>
+    </form>
+    
+    <!-- Lista de livros para excluir -->
+    <h2>Livros na Lista</h2>
+    <ul>
+        {% for book in books %}
+            <li>
+                {{ book.title }} (Autor: {{ book.author }}, Gênero: {{ book.genre }})
+                <a href="{% url 'delete-book' book.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}" class="btn btn-primary">Voltar para a Home</a>
+</body>
+</html>
